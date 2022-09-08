@@ -223,7 +223,7 @@ export default class NumericalMonoid {
         const bettis = this.bettiElements();
         const bettiDistances = bettis.includes(n) ? [Infinity] : bettis.map(x => this._non_dynamic_catenaryDegreeByMetric(x, metric));
         const factorizations = this.factorizations(n);
-        const pairwiseDistancesLessThanMaxBettiElement = new Set();
+        const pairwiseDistancesLessThanMaxBettiElement = new Set<number>();
         factorizations.forEach(fac1 => {
             factorizations.forEach(fac2 => {
                 const distance = metric(fac1, fac2);
